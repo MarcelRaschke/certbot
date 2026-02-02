@@ -4,7 +4,7 @@ import sys
 from setuptools import find_packages
 from setuptools import setup
 
-version = '2.11.0.dev0'
+version = '2.12.0.dev0'
 
 install_requires = [
     'boto3>=1.15.15',
@@ -71,7 +71,7 @@ setup(
     entry_points={
         'certbot.plugins': [
             'dns-route53 = certbot_dns_route53._internal.dns_route53:Authenticator',
-            'certbot-route53:auth = certbot_dns_route53.authenticator:Authenticator'
+            'certbot-route53:auth = certbot_dns_route53._internal.dns_route53:HiddenAuthenticator',
         ],
     },
 )
